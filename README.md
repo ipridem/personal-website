@@ -29,11 +29,10 @@ View the interactive experience here: [index.html](index.html) (Local File)
 ## 📁 PROJECT STRUCTURE
 ```text
 ├── index.html       # Semantic structure, Security headers, and ARIA labels.
-├── assets/
-│   ├── css/
-│   │   └── styles.css   # CSS system (Glassmorphism, Neon themes, Layouts).
-│   └── js/
-│       └── script.js    # Core logic (SHA-256, Matrix Rain, Terminal history).
+├── css/
+│   └── styles.css   # CSS system (Glassmorphism, Neon themes, Layouts).
+└── js/
+│   └── script.js    # Core logic (SHA-256, Matrix Rain, Terminal history).
 ├── walkthrough.md  # Detailed technical implementation guide.
 └── task.md         # Full project development task list.
 ```
