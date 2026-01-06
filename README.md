@@ -24,9 +24,7 @@
 │   └── styles.css   # CSS system (Glassmorphism, Neon themes, Layouts).
 └── js/
 │   └── script.js    # Core logic (SHA-256, Matrix Rain, Terminal history).
-├── walkthrough.md  # Detailed technical implementation guide.
-└── task.md         # Full project development task list.
-```
+
 
 ## 🛠️ TERMINAL COMMANDS
 Access the interactive terminal via the "System.About" section:
