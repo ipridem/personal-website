@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self';">
+    <title>Pride Mazwimairi | ipridem Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous"
+        referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <canvas id="matrix-bg"></canvas>
+
+
+
+    <nav>
+        <div class="logo mono">> ipridem_</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 class="mono">Pride <span class="glitch-text" aria-label="Mazwimairi">Mazwimairi</span></h1>
+        <p class="text-muted">Cybersecurity Student | Ethical Hacker | Pentester</p>
+        <div style="margin-top: 2rem;">
+            <a href="#projects" class="btn btn-primary">View Repositories</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title" aria-label="System.About">System.About</h2>
+        <div class="about-container">
+            <div class="glass-card about-text">
+                <p>I am a second-year Cybersecurity student at the University of Zimbabwe (UZ) with a passion for
+                    offensive security
+                    and network defense. My goal is to bridge the gap between human intuition and technical robustness
+                    to secure the next generation of digital infrastructure.</p>
+            </div>
+
+            <!-- Terminal Widget -->
+            <div class="glass-card terminal-widget mono">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="title">bash</span>
+                </div>
+                <div id="terminal-output" class="terminal-scroll">
+                    <div>Welcome to the Student Terminal v1.0.4. Type 'help' to start.</div>
+                </div>
+                <div class="terminal-input-line">
+                    <span class="prompt">> root@student:~$</span>
+                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="bg-alt">
+        <h2 class="section-title" aria-label="Technical.Capabilities">Technical.Capabilities</h2>
+        <div class="skills-grid">
+            <div class="glass-card skill-category">
+                <h3 class="mono">[Offensive]</h3>
+                <ul>
+                    <li>Penetration Testing</li>
+                    <li>Vulnerability Assessment</li>
+                    <li>Network Enumeration</li>
+                    <li>Web App AppSec</li>
+                </ul>
+            </div>
+            <div class="glass-card skill-category">
+                <h3 class="mono">[Defensive]</h3>
+                <ul>
+                    <li>SOC Monitoring</li>
+                    <li>Incident Response</li>
+                    <li>Network Hardening</li>
+                    <li>IDS/IPS Configuration</li>
+                </ul>
+            </div>
+            <div class="glass-card skill-category">
+                <h3 class="mono">[Tools]</h3>
+                <ul>
+                    <li>Kali Linux / Parrot OS</li>
+                    <li>Metasploit / Burp Suite</li>
+                    <li>Wireshark / Nmap</li>
+                    <li>Splunk / ELK Stack</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title" aria-label="Active.Deployments">Active.Deployments</h2>
+        <div class="projects-grid">
+            <div class="glass-card project-card">
+                <h3>Vulnerability-Scanner</h3>
+                <p class="text-muted">A custom Python script for automated asset discovery and vulnerability matching
+                    using CVE APIs.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Security</span>
+                </div>
+            </div>
+            <div class="glass-card project-card">
+                <h3>Homelab-IDS</h3>
+                <p class="text-muted">Deployed a Suricata IDS monitoring a segmented Proxmox homelab network with
+                    Grafana visualization.</p>
+                <div class="tags">
+                    <span class="tag">Networking</span>
+                    <span class="tag">SIEM</span>
+                </div>
+            </div>
+            <div class="glass-card project-card">
+                <h3>Malware-Analysis-Sandbox</h3>
+                <p class="text-muted">Isolated environment for static and dynamic analysis of portable executables using
+                    FlareVM.</p>
+                <div class="tags">
+                    <span class="tag">Reverse Engineering</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title" aria-label="Establish.Connection">Establish.Connection</h2>
+        <div class="glass-card contact-card">
+            <p>Interested in collaborating or just want to talk security?</p>
+            <div class="social-links">
+                <a href="https://x.com/ipridem" target="_blank" rel="noopener noreferrer" class="social-btn x">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <span>Follow @ipridem</span>
+                </a>
+                <a href="https://github.com/ipridem" target="_blank" rel="noopener noreferrer"
+                    class="social-btn github">
+                    <i class="fa-brands fa-github"></i>
+                    <span>@ipridem</span>
+                </a>
+                <a href="mailto:pride@mazwimairi.uz.ac.zw" rel="noopener noreferrer" class="social-btn email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contact Pride</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Student Portfolio. All rights reserved. <span class="mono">v1.0.4-stable</span></p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
