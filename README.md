@@ -1,12 +1,3 @@
-# Cyber-Noir Portfolio | Pride Mazwimairi
-
-A professional, high-end "Cyber-Noir" themed portfolio website designed for a cybersecurity professional. This project showcases technical skills through an immersive, secure, and accessible digital experience.
-
----
-
-## 🚀 LIVE DEMO
-View the interactive experience here: [index.html](index.html) (Local File)
-
 ## 🛠️ TECHNICAL ARCHITECTURE
 
 ### **Frontend & Visuals**
