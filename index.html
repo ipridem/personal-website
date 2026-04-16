@@ -26,13 +26,19 @@
 
     <nav>
         <div class="logo mono">> ipridem_</div>
-        <div class="nav-links">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
 
     <header class="hero">
         <h1 class="mono">Pride <span class="glitch-text" aria-label="Mazwimairi">Mazwimairi</span></h1>
@@ -40,6 +46,10 @@
         <div style="margin-top: 2rem;">
             <a href="#projects" class="btn btn-primary">View Repositories</a>
         </div>
+        <a href="#about" class="hero-scroll" aria-label="Scroll down">
+            <span>scroll</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
     </header>
 
     <section id="about">
@@ -161,6 +171,10 @@
     <footer>
         <p>&copy; 2026 Student Portfolio. All rights reserved. <span class="mono">v1.0.4-stable</span></p>
     </footer>
+
+    <button id="scroll-top" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
 
     <script src="assets/js/script.js"></script>
 </body>
