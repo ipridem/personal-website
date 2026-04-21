@@ -1,0 +1,41 @@
+Pride Mazwimairi (ipridem)
+Cybersecurity Student | Ethical Hacker | Pentester
+Location: Zimbabwe
+Email: pridemazwi03@gmail.com
+GitHub: https://github.com/ipridem
+LinkedIn: https://www.linkedin.com/in/pride-mazwimairi/
+
+PROFILE
+Second-year Cybersecurity student at the University of Zimbabwe with hands-on experience in offensive security, network defense, and lab-based penetration testing.
+
+CORE SKILLS
+- Penetration Testing
+- Vulnerability Assessment
+- Network Enumeration
+- SOC Monitoring
+- Incident Response
+- IDS/IPS Configuration
+
+TOOLS
+- Kali Linux / Parrot OS
+- Metasploit / Burp Suite
+- Wireshark / Nmap
+- Splunk / ELK Stack
+
+PROJECT HIGHLIGHTS
+- Vulnerability-Scanner: Python-based asset discovery and CVE matching automation
+- Homelab-IDS: Suricata IDS deployment with Grafana visualization
+- Malware-Analysis-Sandbox: Isolated FlareVM analysis environment for PE files
+
+CTF / LABS
+- TryHackMe: Blue, Mr Robot CTF
+- Hack The Box: Appointment, Meow
+
+CERTIFICATIONS
+- Google Cybersecurity Professional Certificate
+- TryHackMe Jr Penetration Tester Path (milestones)
+
+TARGET CERTIFICATIONS
+- eJPT
+- CompTIA Security+
+- TCM Security Practical Ethical Hacking

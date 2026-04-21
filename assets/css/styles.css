@@ -345,6 +345,14 @@ nav {
     -webkit-text-fill-color: transparent;
 }
 
+.hero-cta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* Hero scroll indicator */
 .hero-scroll {
     position: absolute;
@@ -442,6 +450,21 @@ section {
     font-size: 1.5rem;
 }
 
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    color: var(--accent-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.project-link:hover {
+    color: var(--accent-primary);
+}
+
 .project-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 24px rgba(167, 139, 250, 0.12);
@@ -485,6 +508,65 @@ section {
 .btn-primary:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-glass);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: scale(1.05);
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.info-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.info-list li {
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+}
+
+.profile-badges {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.badge-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-glass);
+    border-radius: 12px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.badge-title {
+    color: var(--accent-primary);
+}
+
+.badge-meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.badge-link:hover {
+    border-color: rgba(167, 139, 250, 0.35);
+    transform: translateY(-2px);
 }
 
 /* Social Links Expansion */
@@ -565,6 +647,11 @@ section {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
+.social-btn.linkedin:hover {
+    background: #0A66C2;
+    box-shadow: 0 0 20px rgba(10, 102, 194, 0.6);
+}
+
 .social-btn.facebook:hover {
     background: #1877F2;
     box-shadow: 0 0 20px rgba(24, 119, 242, 0.6);
@@ -578,6 +665,10 @@ section {
 .social-btn.whatsapp:hover {
     background: #25D366;
     box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+}
+
+.contact-cta {
+    margin-top: 1.75rem;
 }
 
 /* Scroll to Top */
