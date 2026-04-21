@@ -4,8 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cybersecurity portfolio of Pride Mazwimairi (ipridem): projects, CTF writeups, certifications, and contact details.">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self';">
+    <meta property="og:title" content="Pride Mazwimairi | ipridem Portfolio">
+    <meta property="og:description"
+        content="Cybersecurity portfolio with active projects, CTF writeups, profile stats, certifications, and contact links.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ipridem.github.io/personal-website/">
+    <meta property="og:image"
+        content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%230a0c12'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='160' fill='%23a78bfa'%3E%3E_%3C/text%3E%3C/svg%3E">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pride Mazwimairi | ipridem Portfolio">
+    <meta name="twitter:description"
+        content="Cybersecurity portfolio with projects, CTF activity, certifications, and professional links.">
+    <meta name="twitter:image"
+        content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%230a0c12'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='160' fill='%23a78bfa'%3E%3E_%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c12'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='28' fill='%23a78bfa'%3E%3E_%3C/text%3E%3C/svg%3E">
     <title>Pride Mazwimairi | ipridem Portfolio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,6 +52,8 @@
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#ctf">CTF</a>
+            <a href="#certifications">Certifications</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -43,8 +62,9 @@
     <header class="hero">
         <h1 class="mono">Pride <span class="glitch-text" aria-label="Mazwimairi">Mazwimairi</span></h1>
         <p class="text-muted">Cybersecurity Student | Ethical Hacker | Pentester</p>
-        <div style="margin-top: 2rem;">
+        <div class="hero-cta">
             <a href="#projects" class="btn btn-primary">View Repositories</a>
+            <a href="assets/docs/Pride-Mazwimairi-CV.txt" class="btn btn-secondary mono" download>Download CV</a>
         </div>
         <a href="#about" class="hero-scroll" aria-label="Scroll down">
             <span>scroll</span>
@@ -121,6 +141,8 @@
                 <h3>Vulnerability-Scanner</h3>
                 <p class="text-muted">A custom Python script for automated asset discovery and vulnerability matching
                     using CVE APIs.</p>
+                <a href="https://github.com/ipridem/vulnerability-scanner" target="_blank" rel="noopener noreferrer"
+                    class="project-link mono">View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 <div class="tags">
                     <span class="tag">Python</span>
                     <span class="tag">Security</span>
@@ -130,6 +152,8 @@
                 <h3>Homelab-IDS</h3>
                 <p class="text-muted">Deployed a Suricata IDS monitoring a segmented Proxmox homelab network with
                     Grafana visualization.</p>
+                <a href="https://github.com/ipridem/homelab-ids" target="_blank" rel="noopener noreferrer"
+                    class="project-link mono">View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 <div class="tags">
                     <span class="tag">Networking</span>
                     <span class="tag">SIEM</span>
@@ -139,9 +163,68 @@
                 <h3>Malware-Analysis-Sandbox</h3>
                 <p class="text-muted">Isolated environment for static and dynamic analysis of portable executables using
                     FlareVM.</p>
+                <a href="https://github.com/ipridem/malware-analysis-sandbox" target="_blank"
+                    rel="noopener noreferrer" class="project-link mono">View on GitHub <i
+                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 <div class="tags">
                     <span class="tag">Reverse Engineering</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ctf" class="bg-alt">
+        <h2 class="section-title" aria-label="CTF.Activity">CTF.Activity</h2>
+        <div class="section-grid">
+            <div class="glass-card">
+                <h3 class="mono">Writeups & Labs</h3>
+                <ul class="info-list">
+                    <li><strong>TryHackMe:</strong> Blue (Windows exploitation)</li>
+                    <li><strong>TryHackMe:</strong> Mr Robot CTF (web + privilege escalation)</li>
+                    <li><strong>Hack The Box:</strong> Appointment (SQL injection fundamentals)</li>
+                    <li><strong>Hack The Box:</strong> Meow (Linux reconnaissance basics)</li>
+                </ul>
+                <div class="tags">
+                    <span class="tag">Web Exploitation</span>
+                    <span class="tag">Privilege Escalation</span>
+                    <span class="tag">Enumeration</span>
+                </div>
+            </div>
+            <div class="glass-card">
+                <h3 class="mono">Profiles & Rank Cards</h3>
+                <div class="profile-badges">
+                    <a href="https://tryhackme.com/p/ipridem" target="_blank" rel="noopener noreferrer"
+                        class="badge-link">
+                        <span class="badge-title mono">TryHackMe</span>
+                        <span class="badge-meta">View profile and current rank</span>
+                    </a>
+                    <a href="https://app.hackthebox.com/profile" target="_blank" rel="noopener noreferrer"
+                        class="badge-link">
+                        <span class="badge-title mono">Hack The Box</span>
+                        <span class="badge-meta">View profile and machine progress</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <h2 class="section-title" aria-label="Certifications.Stack">Certifications.Stack</h2>
+        <div class="section-grid">
+            <div class="glass-card">
+                <h3 class="mono">Completed</h3>
+                <ul class="info-list">
+                    <li>TryHackMe - Jr Penetration Tester Path (in progress milestones)</li>
+                    <li>Google Cybersecurity Professional Certificate (foundational security operations)</li>
+                </ul>
+            </div>
+            <div class="glass-card">
+                <h3 class="mono">Planned / Targeted</h3>
+                <ul class="info-list">
+                    <li>eJPT (INE Security)</li>
+                    <li>CompTIA Security+</li>
+                    <li>TCM Security - Practical Ethical Hacking</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -160,10 +243,18 @@
                     <i class="fa-brands fa-github"></i>
                     <span>@ipridem</span>
                 </a>
+                <a href="https://www.linkedin.com/in/pride-mazwimairi/" target="_blank" rel="noopener noreferrer"
+                    class="social-btn linkedin">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
                 <a href="mailto:pridemazwi03@gmail.com" rel="noopener noreferrer" class="social-btn email">
                     <i class="fa-solid fa-envelope"></i>
                     <span>Contact Pride</span>
                 </a>
+            </div>
+            <div class="contact-cta">
+                <a href="assets/docs/Pride-Mazwimairi-CV.txt" class="btn btn-secondary mono" download>Download CV</a>
             </div>
         </div>
     </section>
