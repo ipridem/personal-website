@@ -1,48 +1,59 @@
-## 🛠️ TECHNICAL ARCHITECTURE
+# Pride Mazwimairi — Portfolio (`ipridem`)
 
-### **Frontend & Visuals**
-- **Dynamic Aesthetic**: A curated glassmorphism design system that adapts to system-level light/dark modes.
-- **HTML5 Canvas Matrix Rain**: A custom-built, layered digital background animation.
-- **Cryptographic Animations**: Text elements utilize **SHA-256 hex signatures** to "decrypt" into readable headers, providing an authentic cybersecurity feel.
-- **Interactive Terminal**: A fully functional mock shell environment that supports custom commands and input history (`ArrowUp`/`ArrowDown`).
+A personal security-dossier portfolio for Pride Mazwimairi (**ipridem**),
+Cybersecurity & Forensic Auditing student at the University of Zimbabwe.
+Static site — no build step, no framework.
 
-### **Security Hardening**
-- **Content Security Policy (CSP)**: Robust meta-tags to prevent Cross-Site Scripting (XSS) and data injection.
-- **Subresource Integrity (SRI)**: External CDN resources (Font Awesome) are verified against cryptographic hashes (SHA-256).
-- **Safe DOM Operations**: Mitigates potential XSS vulnerabilities by using safe DOM node creation methods for terminal echoing.
-- **Secure Navigation**: All external links are hardened with `rel="noopener noreferrer"` to prevent tab-nabbing.
+**Design:** an editorial "security dossier" — ink-on-paper with a single
+restrained accent, large serif display type, and numbered document sections
+(Profile · Capabilities · Deployments · Contact). System-aware light/dark.
 
-### **Accessibility (A11y)**
-- **ARIA Standards**: Implemented `aria-label` on all animated/glitch elements to ensure high screen-reader compatibility.
-- **Motion Sensitivity**: Automatically detects and respects OS-level `prefers-reduced-motion` settings, disabling flicker animations for sensitive users.
-- **Readability Optimization**: Adjustable stabilizers ensure decrypted text remains readable for a minimum of 7 seconds before re-encrypting.
+## Projects on the site
 
-## 📁 PROJECT STRUCTURE
+| Ref | Project | Summary |
+| --- | --- | --- |
+| D-01 | **SDCAMS** | Secure Data Centre Contractor Access Management System — Flask app replacing manual visitor log books; RBAC, admin-approval registration, immutable audit logging, PBKDF2:SHA256, CSV export. Internship project. |
+| D-02 | **FinGuard** | Final-year capstone — mobile-money fraud-detection platform (Flask + PostgreSQL) with four analysis engines feeding a forensic case module. |
+| D-03 | **SmishGuard ZW** | Hybrid rule-based + ML smishing (SMS-phishing) classifier tuned to Zimbabwe's mobile-money context; handles Shona/English code-switching. |
+
+## Tech
+
+- **Frontend:** semantic HTML5, hand-written CSS (OKLCH tokens, 4-pt spacing scale), vanilla JS.
+- **Type:** Newsreader (display) · Inter (body) · Fira Code (mono).
+- **Interactive console:** a mock shell in the Profile section — `help`, `whoami`, `projects`, `status`, `joke`, `hack`, `sudo`, `clear`, with `ArrowUp`/`ArrowDown` history.
+- **Security:** Content Security Policy, Subresource Integrity on the Font Awesome CDN, safe DOM node creation for terminal output, `rel="noopener noreferrer"` on external links.
+- **Accessibility:** respects `prefers-reduced-motion`; visible `:focus-visible` rings; verified with no horizontal scroll down to 320 px.
+
+## Structure
+
 ```text
-├── index.html       # Semantic structure, Security headers, and ARIA labels.
-├── css/
-│   └── styles.css   # CSS system (Glassmorphism, Neon themes, Layouts).
-└── js/
-│   └── script.js    # Core logic (SHA-256, Matrix Rain, Terminal history).
+├── index.html            # Markup, security headers, section structure
+├── assets/
+│   ├── css/styles.css     # Design tokens + all styles
+│   └── js/script.js       # Interactive console + scroll reveals
+└── scripts/
+    └── tunnel.ps1         # Static server + Cloudflare quick tunnel
 ```
 
-## 🛠️ TERMINAL COMMANDS
-Access the interactive terminal via the "System.About" section:
-- `whoami`: Professional background and identity.
-- `projects`: List of active technical deployments.
-- `status`: Real-time system health checks.
-- `joke`: Cybersecurity-themed humor logic.
-- `sudo`: Simulated privilege escalation response.
-- `clear`: Purges the terminal history.
+## Run locally
 
----
+```powershell
+python -m http.server 8000
+# then open http://localhost:8000
+```
 
-## 👤 CONTACT
-**Pride Mazwimairi**
-- **Alias**: ipridem
-- **Role**: Cybersecurity Student @ University of Zimbabwe (UZ)
-- **Twitter/X**: [@ipridem](https://x.com/ipridem)
-- **GitHub**: [@ipridem](https://github.com/ipridem)
+## Share via a public URL (Cloudflare quick tunnel)
 
----
+Requires `cloudflared.exe` in your user profile.
 
+```powershell
+powershell -File scripts/tunnel.ps1
+# prints:  Live at: https://<random>.trycloudflare.com
+# Ctrl+C stops the server and the tunnel
+```
+
+## Contact
+
+**Pride Mazwimairi** · alias **ipridem** · Cybersecurity Student, University of Zimbabwe
+- X/Twitter: [@ipridem](https://x.com/ipridem)
+- GitHub: [@ipridem](https://github.com/ipridem)
