@@ -1,134 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0.5 Matrix Rain
-    const canvas = document.getElementById('matrix-bg');
-    const ctx = canvas.getContext('2d');
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    const chars = "01010101ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*()_+-=<>?/";
-    const fontSize = 16;
-    const columns = canvas.width / fontSize;
-    const drops = [];
-
-    for (let x = 0; x < columns; x++) {
-        drops[x] = 1;
-    }
-
-    function drawMatrix() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent-primary');
-        ctx.font = fontSize + 'px monospace';
-
-        for (let i = 0; i < drops.length; i++) {
-            const text = chars.charAt(Math.floor(Math.random() * chars.length));
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                drops[i] = 0;
-            }
-            drops[i]++;
-        }
-    }
-
-    setInterval(drawMatrix, 33);
-
-    // 1. Typing Effect for Hero (Improved)
-    const heroTitle = document.querySelector('.hero h1 .glitch-text');
-    if (heroTitle) {
-        decryptText(heroTitle);
-        heroTitle.addEventListener('mouseover', () => decryptText(heroTitle));
-    }
-
-
-    // 1.5 Header Decryption
-    const headers = document.querySelectorAll('.section-title');
-    headers.forEach(header => {
-        header.addEventListener('mouseover', () => decryptText(header));
-    });
-
-    // 1.1 SHA-256 Utility
-    async function getSHA256(text) {
-        const msgUint8 = new TextEncoder().encode(text);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-    }
-
-    async function decryptText(element) {
-        if (element.classList.contains('animating')) return;
-
-        const originalText = element.getAttribute('data-text') || element.innerText;
-        element.setAttribute('data-text', originalText);
-
-        // A11y: Respect Reduced Motion
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            element.innerText = originalText;
-            return;
-        }
-
-        element.classList.add('animating');
-
-        const hash = await getSHA256(originalText);
-        const scrambles = "0123456789abcdef";
-
-        let iteration = 0;
-        let interval = null;
-
-        interval = setInterval(() => {
-            element.innerText = originalText.split("")
-                .map((char, index) => {
-                    if (index < iteration) return originalText[index];
-                    return hash[index % hash.length] || scrambles[Math.floor(Math.random() * scrambles.length)];
-                })
-                .join("");
-
-            if (iteration >= originalText.length) {
-                clearInterval(interval);
-                // Hold Phase (7s) - Increased for better readability/A11y
-                setTimeout(() => {
-                    encryptText(element, originalText);
-                }, 7000);
-            }
-            iteration += 1 / 2;
-        }, 15);
-    }
-
-    async function encryptText(element, originalText) {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            element.innerText = originalText;
-            element.classList.remove('animating');
-            return;
-        }
-
-        const hash = await getSHA256(originalText);
-        let iteration = originalText.length;
-        let interval = null;
-        const scrambles = "0123456789abcdef";
-
-        interval = setInterval(() => {
-            element.innerText = originalText.split("")
-                .map((char, index) => {
-                    if (index < iteration) return originalText[index];
-                    return hash[index % hash.length] || scrambles[Math.floor(Math.random() * scrambles.length)];
-                })
-                .join("");
-
-            if (iteration <= 0) {
-                clearInterval(interval);
-                element.classList.remove('animating');
-            }
-            iteration -= 1 / 2;
-        }, 15);
-    }
-
-    // 2. Interactive Terminal Logic
+    // 1. Interactive Terminal Logic
     const terminalInput = document.getElementById('terminal-input');
     const terminalOutput = document.getElementById('terminal-output');
 
@@ -168,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const line = document.createElement('div');
         const promptSpan = document.createElement('span');
         promptSpan.className = 'prompt';
-        promptSpan.textContent = '> root@student:~$';
+        promptSpan.textContent = 'root@student:~$';
 
         line.appendChild(promptSpan);
         line.appendChild(document.createTextNode(` ${cmd}`));
@@ -192,8 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 response.textContent = 'Available commands: help, whoami, projects, clear, status, joke, hack, sudo';
                 break;
             case 'joke':
-                const randomIndex = Math.floor(Math.random() * jokes.length);
-                response.textContent = jokes[randomIndex];
+                response.textContent = jokes[Math.floor(Math.random() * jokes.length)];
                 break;
             case 'hack':
                 response.textContent = 'Access authorized. Entering stealth mode...';
@@ -213,8 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'status':
                 response.textContent = 'System: Optimal | Firewall: Active | VPN: Connected';
                 break;
-            case '':
-                break;
             default:
                 response.textContent = `Command not found: ${cmd}. Type 'help' for options.`;
         }
@@ -223,90 +91,19 @@ document.addEventListener('DOMContentLoaded', () => {
         terminalOutput.scrollTop = terminalOutput.scrollHeight;
     }
 
-    // 3. Intersection Observer for Scroll Animations
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                if (entry.target.classList.contains('section-title')) {
-                    decryptText(entry.target);
+    // 2. Restrained scroll reveal
+    const revealables = document.querySelectorAll('[data-reveal]');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        revealables.forEach(el => el.classList.add('in-view'));
+    } else {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
                 }
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('section, .glass-card, .section-title').forEach(el => {
-        el.classList.add('reveal');
-        observer.observe(el);
-    });
-
-    // 4. Hamburger Menu
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const navOverlay = document.getElementById('nav-overlay');
-
-    function closeMenu() {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('open');
-        navOverlay.classList.remove('visible');
-        navToggle.setAttribute('aria-expanded', 'false');
-    }
-
-    if (navToggle) {
-        navToggle.addEventListener('click', () => {
-            const isOpen = navLinks.classList.contains('open');
-            if (isOpen) {
-                closeMenu();
-            } else {
-                navToggle.classList.add('active');
-                navLinks.classList.add('open');
-                navOverlay.classList.add('visible');
-                navToggle.setAttribute('aria-expanded', 'true');
-            }
-        });
-    }
-
-    if (navOverlay) {
-        navOverlay.addEventListener('click', closeMenu);
-    }
-
-    // Close menu when a nav link is clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
-
-    // 5. Active nav link on scroll
-    const sections = document.querySelectorAll('section[id]');
-    const navItems = document.querySelectorAll('.nav-links a');
-
-    const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navItems.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
-                });
-            }
-        });
-    }, { rootMargin: '-40% 0px -55% 0px' });
-
-    sections.forEach(s => navObserver.observe(s));
-
-    // 6. Scroll-to-top button
-    const scrollTopBtn = document.getElementById('scroll-top');
-
-    window.addEventListener('scroll', () => {
-        if (scrollTopBtn) {
-            scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-        }
-    });
-
-    if (scrollTopBtn) {
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+            });
+        }, { threshold: 0.12 });
+        revealables.forEach(el => observer.observe(el));
     }
 });

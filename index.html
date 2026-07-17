@@ -4,31 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Cybersecurity portfolio of Pride Mazwimairi (ipridem): projects, CTF writeups, certifications, and contact details.">
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self';">
-    <meta property="og:title" content="Pride Mazwimairi | ipridem Portfolio">
-    <meta property="og:description"
-        content="Cybersecurity portfolio with active projects, CTF writeups, profile stats, certifications, and contact links.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ipridem.github.io/personal-website/">
-    <meta property="og:image"
-        content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%230a0c12'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='160' fill='%23a78bfa'%3E%3E_%3C/text%3E%3C/svg%3E">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pride Mazwimairi | ipridem Portfolio">
-    <meta name="twitter:description"
-        content="Cybersecurity portfolio with projects, CTF activity, certifications, and professional links.">
-    <meta name="twitter:image"
-        content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%230a0c12'/%3E%3Ctext x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='160' fill='%23a78bfa'%3E%3E_%3C/text%3E%3C/svg%3E">
-    <link rel="icon" type="image/svg+xml"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0c12'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='28' fill='%23a78bfa'%3E%3E_%3C/text%3E%3C/svg%3E">
     <title>Pride Mazwimairi | ipridem Portfolio</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous"
@@ -37,238 +20,208 @@
 </head>
 
 <body>
-    <canvas id="matrix-bg"></canvas>
-
-
-
     <nav>
-        <div class="logo mono">> ipridem_</div>
-        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="nav-links" id="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#ctf">CTF</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
+        <div class="wrap">
+            <div class="logo mono">ipridem</div>
+            <div class="nav-links">
+                <a href="#about">Profile</a>
+                <a href="#skills">Capabilities</a>
+                <a href="#projects">Deployments</a>
+                <a href="#contact">Contact</a>
+            </div>
         </div>
     </nav>
-    <div class="nav-overlay" id="nav-overlay"></div>
 
-    <header class="hero">
-        <h1 class="mono">Pride <span class="glitch-text" aria-label="Mazwimairi">Mazwimairi</span></h1>
-        <p class="text-muted">Cybersecurity Student | Ethical Hacker | Pentester</p>
-        <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">View Repositories</a>
-            <a href="assets/docs/Pride-Mazwimairi-CV.txt" class="btn btn-secondary mono" download>Download CV</a>
-        </div>
-        <a href="#about" class="hero-scroll" aria-label="Scroll down">
-            <span>scroll</span>
-            <i class="fa-solid fa-chevron-down"></i>
-        </a>
-    </header>
+    <main class="wrap">
+        <header class="hero">
+            <span class="eyebrow">Security Dossier &middot; ipridem</span>
+            <h1>Pride Mazwimairi</h1>
+            <p class="lede">Cybersecurity student, ethical hacker, and pentester bridging human intuition
+                with technical robustness to secure the next generation of digital infrastructure.</p>
 
-    <section id="about">
-        <h2 class="section-title" aria-label="System.About">System.About</h2>
-        <div class="about-container">
-            <div class="glass-card about-text">
-                <p>I am a second-year Cybersecurity student at the University of Zimbabwe (UZ) with a passion for
-                    offensive security
-                    and network defense. My goal is to bridge the gap between human intuition and technical robustness
-                    to secure the next generation of digital infrastructure.</p>
-            </div>
+            <dl class="dossier-meta">
+                <div>
+                    <dt>Field</dt>
+                    <dd>Offensive Security &amp; Network Defense</dd>
+                </div>
+                <div>
+                    <dt>Institution</dt>
+                    <dd>University of Zimbabwe</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd>4th-Year Student &middot; Active</dd>
+                </div>
+                <div>
+                    <dt>Codename</dt>
+                    <dd>ipridem</dd>
+                </div>
+            </dl>
 
-            <!-- Terminal Widget -->
-            <div class="glass-card terminal-widget mono">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="title">bash</span>
-                </div>
-                <div id="terminal-output" class="terminal-scroll">
-                    <div>Welcome to the Student Terminal v1.0.4. Type 'help' to start.</div>
-                </div>
-                <div class="terminal-input-line">
-                    <span class="prompt">> root@student:~$</span>
-                    <input type="text" id="terminal-input" autocomplete="off" spellcheck="false">
-                </div>
-            </div>
-        </div>
-    </section>
+            <a href="#projects" class="btn">View Repositories <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        </header>
 
-    <section id="skills" class="bg-alt">
-        <h2 class="section-title" aria-label="Technical.Capabilities">Technical.Capabilities</h2>
-        <div class="skills-grid">
-            <div class="glass-card skill-category">
-                <h3 class="mono">[Offensive]</h3>
-                <ul>
-                    <li>Penetration Testing</li>
-                    <li>Vulnerability Assessment</li>
-                    <li>Network Enumeration</li>
-                    <li>Web App AppSec</li>
-                </ul>
+        <section id="about" data-reveal>
+            <div class="section-head">
+                <span class="section-num mono">01</span>
+                <h2 class="section-title">Profile</h2>
             </div>
-            <div class="glass-card skill-category">
-                <h3 class="mono">[Defensive]</h3>
-                <ul>
-                    <li>SOC Monitoring</li>
-                    <li>Incident Response</li>
-                    <li>Network Hardening</li>
-                    <li>IDS/IPS Configuration</li>
-                </ul>
-            </div>
-            <div class="glass-card skill-category">
-                <h3 class="mono">[Tools]</h3>
-                <ul>
-                    <li>Kali Linux / Parrot OS</li>
-                    <li>Metasploit / Burp Suite</li>
-                    <li>Wireshark / Nmap</li>
-                    <li>Splunk / ELK Stack</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am a fourth-year Cybersecurity and Forensic Auditing student at the University of Zimbabwe with a passion for
+                        offensive security and network forensics. My goal is to bridge the gap between human intuition
+                        and technical robustness to secure the next generation of digital infrastructure.</p>
+                </div>
 
-    <section id="projects">
-        <h2 class="section-title" aria-label="Active.Deployments">Active.Deployments</h2>
-        <div class="projects-grid">
-            <div class="glass-card project-card">
-                <h3>Vulnerability-Scanner</h3>
-                <p class="text-muted">A custom Python script for automated asset discovery and vulnerability matching
-                    using CVE APIs.</p>
-                <a href="https://github.com/ipridem/vulnerability-scanner" target="_blank" rel="noopener noreferrer"
-                    class="project-link mono">View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">Security</span>
+                <div class="console mono">
+                    <div class="console-bar">
+                        <span>console &mdash; /bin/sh</span>
+                        <span>type 'help'</span>
+                    </div>
+                    <div id="terminal-output" class="console-scroll">
+                        <div>Welcome to Terminal v1.0.4. Type 'help' to start.</div>
+                    </div>
+                    <div class="terminal-input-line">
+                        <span class="prompt">root@ipridem:~$</span>
+                        <label for="terminal-input" class="visually-hidden" hidden>Terminal command</label>
+                        <input type="text" id="terminal-input" autocomplete="off" spellcheck="false"
+                            aria-label="Terminal command">
+                    </div>
                 </div>
             </div>
-            <div class="glass-card project-card">
-                <h3>Homelab-IDS</h3>
-                <p class="text-muted">Deployed a Suricata IDS monitoring a segmented Proxmox homelab network with
-                    Grafana visualization.</p>
-                <a href="https://github.com/ipridem/homelab-ids" target="_blank" rel="noopener noreferrer"
-                    class="project-link mono">View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <div class="tags">
-                    <span class="tag">Networking</span>
-                    <span class="tag">SIEM</span>
-                </div>
-            </div>
-            <div class="glass-card project-card">
-                <h3>Malware-Analysis-Sandbox</h3>
-                <p class="text-muted">Isolated environment for static and dynamic analysis of portable executables using
-                    FlareVM.</p>
-                <a href="https://github.com/ipridem/malware-analysis-sandbox" target="_blank"
-                    rel="noopener noreferrer" class="project-link mono">View on GitHub <i
-                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                <div class="tags">
-                    <span class="tag">Reverse Engineering</span>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="ctf" class="bg-alt">
-        <h2 class="section-title" aria-label="CTF.Activity">CTF.Activity</h2>
-        <div class="section-grid">
-            <div class="glass-card">
-                <h3 class="mono">Writeups & Labs</h3>
-                <ul class="info-list">
-                    <li><strong>TryHackMe:</strong> Blue (Windows exploitation)</li>
-                    <li><strong>TryHackMe:</strong> Mr Robot CTF (web + privilege escalation)</li>
-                    <li><strong>Hack The Box:</strong> Appointment (SQL injection fundamentals)</li>
-                    <li><strong>Hack The Box:</strong> Meow (Linux reconnaissance basics)</li>
-                </ul>
-                <div class="tags">
-                    <span class="tag">Web Exploitation</span>
-                    <span class="tag">Privilege Escalation</span>
-                    <span class="tag">Enumeration</span>
+        <section id="skills" data-reveal>
+            <div class="section-head">
+                <span class="section-num mono">02</span>
+                <h2 class="section-title">Capabilities</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Offensive</h3>
+                    <ul>
+                        <li>Penetration Testing</li>
+                        <li>Vulnerability Assessment</li>
+                        <li>Network Enumeration</li>
+                        <li>Web App AppSec</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Defensive</h3>
+                    <ul>
+                        <li>SOC Monitoring</li>
+                        <li>Incident Response</li>
+                        <li>Network Hardening</li>
+                        <li>IDS/IPS Configuration</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li>Kali Linux / Parrot OS</li>
+                        <li>Metasploit / Burp Suite</li>
+                        <li>Wireshark / Nmap</li>
+                        <li>Splunk / ELK Stack</li>
+                    </ul>
                 </div>
             </div>
-            <div class="glass-card">
-                <h3 class="mono">Profiles & Rank Cards</h3>
-                <div class="profile-badges">
-                    <a href="https://tryhackme.com/p/ipridem" target="_blank" rel="noopener noreferrer"
-                        class="badge-link">
-                        <span class="badge-title mono">TryHackMe</span>
-                        <span class="badge-meta">View profile and current rank</span>
+        </section>
+
+        <section id="projects" data-reveal>
+            <div class="section-head">
+                <span class="section-num mono">03</span>
+                <h2 class="section-title">Deployments</h2>
+            </div>
+            <div class="projects-list">
+                <article class="project-entry">
+                    <span class="project-id mono">D-01</span>
+                    <div>
+                        <h3>SDCAMS</h3>
+                        <p>Secure Data Centre Contractor Access Management System &mdash; a Flask web app that replaces
+                            manual visitor log books in high-security environments. Enforces role-based access control,
+                            admin-approval registration, and immutable audit logging, with PBKDF2:SHA256 hashing and
+                            CSV export. Built for my cybersecurity internship.</p>
+                        <div class="tags">
+                            <span class="tag">Python / Flask</span>
+                            <span class="tag">RBAC</span>
+                            <span class="tag">Audit Logging</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-entry">
+                    <span class="project-id mono">D-02</span>
+                    <div>
+                        <h3>FinGuard</h3>
+                        <p>Final-year capstone: a mobile-money fraud-detection platform on Flask + PostgreSQL. Four
+                            analysis engines &mdash; transaction analytics, APK static analysis, forensic case
+                            reporting, and SMS-phishing detection &mdash; feed a single case module with
+                            process-stable evidence hashing for forensic integrity.</p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Digital Forensics</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="project-entry">
+                    <span class="project-id mono">D-03</span>
+                    <div>
+                        <h3>SmishGuard ZW</h3>
+                        <p>A hybrid rule-based + machine-learning smishing (SMS-phishing) classifier tuned to Zimbabwe's
+                            mobile-money threat landscape. Handles Shona/English code-switched messages, engineered
+                            URL and keyword features, and a synthetic-SMS generator for training. Grew out of FinGuard's
+                            detection engine into a standalone model.</p>
+                        <div class="tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Flask</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" data-reveal>
+            <div class="section-head">
+                <span class="section-num mono">04</span>
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <p class="contact-lede">Interested in collaborating, or just want to talk security? The channels are
+                open.</p>
+            <ul class="contact-list">
+                <li>
+                    <a href="https://x.com/ipridem" target="_blank" rel="noopener noreferrer">
+                        <span class="c-label">X / Twitter</span>
+                        <span class="c-value">@ipridem</span>
+                        <span class="arrow" aria-hidden="true">&rarr;</span>
                     </a>
-                    <a href="https://app.hackthebox.com/users/ipridem" target="_blank" rel="noopener noreferrer"
-                        class="badge-link">
-                        <span class="badge-title mono">Hack The Box</span>
-                        <span class="badge-meta">View profile and machine progress</span>
+                </li>
+                <li>
+                    <a href="https://github.com/ipridem" target="_blank" rel="noopener noreferrer">
+                        <span class="c-label">GitHub</span>
+                        <span class="c-value">@ipridem</span>
+                        <span class="arrow" aria-hidden="true">&rarr;</span>
                     </a>
-                </div>
-            </div>
-        </div>
-    </section>
+                </li>
+                <li>
+                    <a href="mailto:pride.mazwimairi@gmail.com" rel="noopener noreferrer">
+                        <span class="c-label">Email</span>
+                        <span class="c-value">pride.mazwimairi@gmail.com</span>
+                        <span class="arrow" aria-hidden="true">&rarr;</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
 
-    <section id="certifications">
-        <h2 class="section-title" aria-label="Certifications.Stack">Certifications.Stack</h2>
-        <div class="section-grid">
-            <div class="glass-card">
-                <h3 class="mono">Completed</h3>
-                <ul class="info-list">
-                    <li>TryHackMe - Jr Penetration Tester Path (in progress milestones)</li>
-                    <li>Google Cybersecurity Professional Certificate (foundational security operations)</li>
-                </ul>
-            </div>
-            <div class="glass-card">
-                <h3 class="mono">Planned / Targeted</h3>
-                <ul class="info-list">
-                    <li>eJPT (INE Security)</li>
-                    <li>CompTIA Security+</li>
-                    <li>TCM Security - Practical Ethical Hacking</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title" aria-label="Establish.Connection">Establish.Connection</h2>
-        <div class="glass-card contact-card">
-            <p>Interested in collaborating or just want to talk security?</p>
-            <div class="social-links">
-                <a href="https://x.com/ipridem" target="_blank" rel="noopener noreferrer" class="social-btn x">
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <span>Follow @ipridem</span>
-                </a>
-                <a href="https://github.com/ipridem" target="_blank" rel="noopener noreferrer"
-                    class="social-btn github">
-                    <i class="fa-brands fa-github"></i>
-                    <span>@ipridem</span>
-                </a>
-                <a href="https://www.linkedin.com/in/pride-mazwimairi/" target="_blank" rel="noopener noreferrer"
-                    class="social-btn linkedin">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="mailto:pridemazwi03@gmail.com" rel="noopener noreferrer" class="social-btn email">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>Contact Pride</span>
-                </a>
-            </div>
-            <div class="contact-cta">
-                <a href="assets/docs/Pride-Mazwimairi-CV.txt" class="btn btn-secondary mono" download>Download CV</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Student Portfolio. All rights reserved. <span class="mono">v1.0.4-stable</span></p>
-    </footer>
-
-    <button id="scroll-top" aria-label="Back to top">
-        <i class="fa-solid fa-chevron-up"></i>
-    </button>
+    <div class="wrap">
+        <footer>
+            <span>&copy; 2026 Pride Mazwimairi &middot; ipridem</span>
+            <span class="mono">v1.0.4-stable</span>
+        </footer>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
-
 
 </html>
