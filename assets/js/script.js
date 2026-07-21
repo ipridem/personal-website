@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 response.textContent = 'Pride Mazwimairi (ipridem) | Cybersecurity Student @ UZ | Aspiring Ethical Hacker';
                 break;
             case 'projects':
-                response.textContent = 'Loading deployments: [Scanner, IDS, Sandbox]. Scroll down for details.';
+                response.textContent = 'Loading deployments: [SDCAMS, FinGuard, SmishGuard]. Scroll down for details.';
                 break;
             case 'clear':
                 terminalOutput.innerHTML = '';
