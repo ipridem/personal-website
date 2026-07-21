@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 response.textContent = 'Nice try. This incident will be reported.';
                 break;
             case 'whoami':
-                response.textContent = 'Pride Mazwimairi (ipridem) | Cybersecurity Student @ UZ | Aspiring Ethical Hacker';
+                response.textContent = 'Pride Mazwimairi (ipridem) | Final-year Cybersecurity & Forensic Auditing @ University of Zimbabwe | Offensive security, digital forensics, pentesting';
                 break;
             case 'projects':
                 response.textContent = 'Loading deployments: [SDCAMS, FinGuard, SmishGuard]. Scroll down for details.';
