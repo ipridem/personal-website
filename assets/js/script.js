@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const line = document.createElement('div');
         const promptSpan = document.createElement('span');
         promptSpan.className = 'prompt';
-        promptSpan.textContent = 'root@student:~$';
+        promptSpan.textContent = 'root@ipridem:~$';
 
         line.appendChild(promptSpan);
         line.appendChild(document.createTextNode(` ${cmd}`));
