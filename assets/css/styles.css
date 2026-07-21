@@ -555,3 +555,22 @@ footer {
         transition: none;
     }
 }
+
+
+/* Mobile: stop long contact values (email) overflowing narrow screens */
+@media (max-width: 560px) {
+    .contact-list a {
+        flex-wrap: wrap;
+        gap: var(--space-2xs) var(--space-sm);
+    }
+
+    .contact-list .c-label {
+        min-width: 0;
+        flex-basis: 100%;
+    }
+
+    .contact-list .c-value {
+        overflow-wrap: anywhere;
+        min-width: 0;
+    }
+}
