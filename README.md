@@ -1,59 +1,50 @@
-# Pride Mazwimairi — Portfolio (`ipridem`)
+# ipridem — Security Lab & Portfolio
 
-A personal security-dossier portfolio for Pride Mazwimairi (**ipridem**),
-Cybersecurity & Forensic Auditing student at the University of Zimbabwe.
-Static site — no build step, no framework.
+Personal portfolio and interactive security workbench for **Pride Mazwimairi** (`ipridem`), final-year BSc Cybersecurity & Forensic Auditing student at the University of Zimbabwe. Designed as a dark technical telemetry interface with live interactive sandboxes for each flagship project.
 
-**Design:** an editorial "security dossier" — ink-on-paper with a single
-restrained accent, large serif display type, and numbered document sections
-(Profile · Capabilities · Deployments · Contact). System-aware light/dark.
+Static site — no build step, no dependencies, no framework.
 
-## Projects on the site
+**Live:** https://ipridem.github.io/portfolio/
 
-| Ref | Project | Summary |
-| --- | --- | --- |
-| D-01 | **SDCAMS** | Secure Data Centre Contractor Access Management System — Flask app replacing manual visitor log books; RBAC, admin-approval registration, immutable audit logging, PBKDF2:SHA256, CSV export. Internship project. |
-| D-02 | **FinGuard** | Final-year capstone — mobile-money fraud-detection platform (Flask + PostgreSQL) with four analysis engines feeding a forensic case module. |
-| D-03 | **SmishGuard ZW** | Hybrid rule-based + ML smishing (SMS-phishing) classifier tuned to Zimbabwe's mobile-money context; handles Shona/English code-switching. |
+## Run it
 
-## Tech
+Open `index.html` in a browser, or serve locally:
 
-- **Frontend:** semantic HTML5, hand-written CSS (OKLCH tokens, 4-pt spacing scale), vanilla JS.
-- **Type:** Newsreader (display) · Inter (body) · Fira Code (mono).
-- **Interactive console:** a mock shell in the Profile section — `help`, `whoami`, `projects`, `status`, `joke`, `hack`, `sudo`, `clear`, with `ArrowUp`/`ArrowDown` history.
-- **Security:** Content Security Policy, Subresource Integrity on the Font Awesome CDN, safe DOM node creation for terminal output, `rel="noopener noreferrer"` on external links.
-- **Accessibility:** respects `prefers-reduced-motion`; visible `:focus-visible` rings; verified with no horizontal scroll down to 320 px.
+```bash
+python -m http.server 8000
+```
 
 ## Structure
 
 ```text
-├── index.html            # Markup, security headers, section structure
-├── assets/
-│   ├── css/styles.css     # Design tokens + all styles
-│   └── js/script.js       # Interactive console + scroll reveals
-└── scripts/
-    └── tunnel.ps1         # Static server + Cloudflare quick tunnel
+index.html            # Hero HUD, Interactive Workbench, Deployments, CLI, Capabilities, Contact
+assets/css/styles.css # Obsidian dark + daylight schematic theme tokens & responsive layout
+assets/js/script.js   # SmishGuard analyzer, purpose-conditioned REST filter, RBAC simulator, CLI
+robots.txt
+sitemap.xml
+scripts/tunnel.ps1    # Local tunnel helper
 ```
 
-## Run locally
+## What's in it
 
-```powershell
-python -m http.server 8000
-# then open http://localhost:8000
-```
+- **Interactive Threat & Forensics Workbench**:
+  - **SmishGuard ZW Analyzer** — client-side lexical, URL/TLD, and Shona/English code-switching smishing detector with tokenized payload highlighting and preset lures.
+  - **purpose-conditioned-disclosure-control** — interactive REST response filter for Apache Fineract payloads enforcing server-side route-to-purpose binding (`kyc`, `balance`, `history`, fail-closed `403` on unmapped routes), canonical field mapping, `[REDACTED]` filtering, schema-drift testing, baseline comparison, and Web Crypto `SHA-256` audit hashing against UK Open Banking v4.0 ground truth.
+  - **SDCAMS RBAC & Audit Simulator** — evaluates contractor/officer/auditor/sysadmin permissions and enforces append-only audit log immutability.
+- **Forensic & Security CLI** — virtual filesystem and security commands (`help`, `whoami`, `ls`, `cat`, `filter`, `smish`, `sha256`, `clear`) with `ArrowUp`/`ArrowDown` history and `Tab` completion.
+- **Dark / Light Theme Toggle** — defaults to Obsidian Dark Lab with a clean daylight schematic toggle.
+- **Strict Security Posture** — strict `Content-Security-Policy` (`script-src 'self'`, `style-src 'self'`, zero inline styles or scripts), XSS-safe DOM node construction (no `innerHTML`), and `rel="noopener noreferrer"` on external links.
 
-## Share via a public URL (Cloudflare quick tunnel)
+## Projects featured
 
-Requires `cloudflared.exe` in your user profile.
-
-```powershell
-powershell -File scripts/tunnel.ps1
-# prints:  Live at: https://<random>.trycloudflare.com
-# Ctrl+C stops the server and the tunnel
-```
+| ID | Project | Notes |
+|----|---------|-------|
+| D-01 | [SDCAMS](https://github.com/ipridem/SDCAMS) | Data-centre contractor access management — Flask, RBAC, PBKDF2:SHA256, immutable audit logs |
+| D-02 | [purpose-conditioned-disclosure-control](https://github.com/ipridem/purpose-conditioned-disclosure-control) | Purpose-bound REST API response filter (Honours Dissertation) — Python/Flask, Apache Fineract, UK Open Banking v4.0 |
+| D-03 | [SmishGuard ZW](https://github.com/ipridem/smishguard) | Hybrid rule-based + ML smishing classifier tuned to Zimbabwe's Shona/English threat landscape |
 
 ## Contact
 
-**Pride Mazwimairi** · alias **ipridem** · Cybersecurity Student, University of Zimbabwe
-- X/Twitter: [@ipridem](https://x.com/ipridem)
-- GitHub: [@ipridem](https://github.com/ipridem)
+- **GitHub:** [@ipridem](https://github.com/ipridem)
+- **X:** [@ipridem](https://x.com/ipridem)
+- **Email:** pridemazwi03@gmail.com
